@@ -83,16 +83,18 @@ For GPU training, reinstall `torch` and `torchvision` from the matching index li
 (`cu126` and `cu132` builds are also available for this version):
 
 ```bash
-pip install torch==2.14.1 torchvision==0.29.1 --index-url https://download.pytorch.org/whl/cu130
+pip install --force-reinstall --no-deps torch==2.14.1 torchvision==0.29.1 --index-url https://download.pytorch.org/whl/cu130
 ```
 
+TensorFlow 2.11+ has no GPU support on native Windows, so models 1-2 run on CPU there (use WSL2 for GPU).
+
 > **Compatibility note.** The notebook was originally developed in 2022 with Python 3.9, TensorFlow 2.5,
-> PyTorch 1.10 and NumPy 1.21. Some of its code relies on APIs that have since been removed or changed:
-> - `tensorflow.keras.preprocessing.image.ImageDataGenerator` (models 1-2) no longer exists in Keras 3
-> - `imgaug` (data preparation 3-4) fails at runtime with NumPy 2
-> - the YOLOv5 code at ultralytics commit `cb2ad9f` predates current PyTorch/NumPy releases
+> PyTorch 1.10 and NumPy 1.21. It has been adapted to run top to bottom with the pinned dependencies:
+> - `imgaug` 0.4 needs `np.sctypes`, removed in NumPy 2; cell 5 restores it before importing `imgaug`
+> - the YOLOv5 code at ultralytics commit `cb2ad9f` imports `pkg_resources`, hence `setuptools<81`
+> - a few pandas/Pillow calls were updated for pandas 3 and Pillow 10+ without changing results
 >
-> Expect to adapt those cells when rerunning the notebook with these dependencies.
+> The YOLOv5 training cells were not re-run with this stack; the committed results come from the 2022 runs.
 
 ## Running the notebook
 
