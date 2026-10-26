@@ -1,0 +1,32 @@
+
+Mencionar:
+
+- GPU
+
+- Tensorflow
+
+- Keras e Image Data Generator
+	
+	Reducción de calidad
+	Escalado de grises
+	Aumentación de datos durante el entrenamiento
+	
+	Se entrena con toda la imágen
+	
+	Ventajas, experiencias,
+
+- Modelos de redes convolucionales
+
+- TensorBoard 
+
+- Pytorch framework
+
+- Yolov5. Funcionamiento general,
+
+Comparación con Tensor
+
+
+Github
+
+
+

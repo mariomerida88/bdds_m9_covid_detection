@@ -1,0 +1,7 @@
+train: ./model_4_data_balanced/images/train
+val: ./model_4_data_balanced/images/val
+nc: 3
+names:
+- atypical
+- indeterminate
+- typical

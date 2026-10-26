@@ -1,0 +1,25 @@
+# Kaggle images (download from Kaggle) and generated JPG folders
+data/*
+!data/kaggle/
+!data/processed/
+
+# Model weights / large artifacts
+*.h5
+*.pt
+
+# YOLOv5 clones (re-cloned by the notebook)
+experiments/*/yolov5/
+
+# Tooling / environments
+.ipynb_checkpoints/
+__pycache__/
+.venv/
+wandb/
+
+# Items pending manual review before deletion
+_to_delete/
+
+# Claude Code
+CLAUDE.md
+CLAUDE.local.md
+.claude/
